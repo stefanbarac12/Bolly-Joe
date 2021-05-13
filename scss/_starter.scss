@@ -1,0 +1,45 @@
+@import url('https://fonts.googleapis.com/css?family=Pontano+Sans&display=swap');
+
+$gray: #333333;
+$darkgray: #2e2e2e;
+$yellow: #f3cd52;
+$lightgray: rgba(255,255,255,0.4);
+$white: #fff;
+$transition: .4s ease;
+$font-size: 16px;
+$black: #000;
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    font-family: Pontano, sans-serif;
+    font-size: $font-size;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+a {
+    text-decoration: none;
+    color: $black;
+    transition: $transition;
+
+    &:hover {
+        transition: $transition;
+    }
+}
+
+ul {
+    list-style: none;
+}
+
+.container {
+    width: 70%;
+    margin: auto;
+    padding: 100px 0 ;
+}

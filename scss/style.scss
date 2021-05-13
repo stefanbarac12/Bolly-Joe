@@ -1,0 +1,388 @@
+@import 'starter';
+@import 'mixins';
+
+header {
+    background-color: $yellow;
+    color: $black;
+    height: 132vh;
+
+    nav {
+        ul {
+            @include flex(center, center);
+
+            li {
+                margin: 50px;
+
+                a {
+                    text-transform: uppercase;
+                    font-size: 1.2rem;
+                    transition: $transition;
+                    padding-bottom: 10px;
+                    border-bottom: 2px solid $yellow;
+
+                    &:hover {
+                        border-bottom: 2px solid $black;
+                    }
+                }
+            }
+        }
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 3.5rem;
+        margin: 30px 0;
+    }
+
+    h3 {
+        text-align: center;
+        text-transform: uppercase;
+        font-weight: normal;
+        margin: 30px 0;
+    }
+
+    .hero {
+        width: 70%;
+        margin: auto;
+        margin-top: 120px;
+        border: 40px solid #fae9ba;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+
+.about {
+    background-color: #424242;
+
+    .container {
+        @include flex(center, flex-start);
+        border-bottom: 2px solid $lightgray;
+
+        h2 {
+            color: $white;
+            font-size: 2.5rem;
+            text-align: center;
+        }
+
+        p {
+            color: $lightgray;
+            text-align: center;
+            line-height: 2;
+            margin: 50px 80px;
+            font-size: 1.2rem;
+        }
+
+        button {
+            @include btn;
+
+            &:hover {
+                color: $yellow;
+                background: $black;
+            }
+        }
+
+    }
+}
+
+.portfolio {
+    background-color: #424242;
+
+    h3 {
+        color: $white;
+        font-size: 3rem;
+        text-align: center;
+        padding: 100px 0 40px;
+    }
+
+    p {
+        text-align: center;
+        columns: $white;
+        color: $lightgray;
+    }
+
+    .container {
+        @include flex(center, flex-start);
+        border-bottom: 2px solid $lightgray;
+
+        div {
+            width: 20%;
+            margin: auto;
+
+            h2 {
+                color: $white;
+                font-size: 2.5rem;
+                text-align: center;
+                padding: 100px 0 40px;
+            }
+
+            img {
+                width: 100%;
+            }
+
+            p {
+                line-height: 2;
+                padding: 0 50px 30px;
+            }
+
+            button {
+                @include btn; 
+                
+                &:hover {
+                    color: $yellow;
+                    background: $black;
+                }
+            }
+        }
+    }
+}
+
+.contact {
+    background-color: #424242;
+
+    .container { padding-bottom: 50px;}
+
+    h3 {
+        color: $white;
+        font-size: 3rem;
+        text-align: center;
+        padding: 0 0 40px 0;
+    }
+
+    p {
+        text-align: center;
+        columns: $white;
+        color: $lightgray;
+        padding-bottom: 40px;
+    }
+    
+    input,
+    textarea {
+        display: block;
+        padding: 20px;
+        width: 40%;
+        margin: 20px auto;
+        background-color: #3d3d3d;
+        outline: none;
+        border: none;
+        font-size: 1.2rem;
+        color: $lightgray;
+    }
+
+    button {
+        @include btn; 
+        margin-bottom: 100px;
+        
+        &:hover {
+            color: $yellow;
+            background: $black;
+        }
+    }
+
+    .icons {
+        @include flex(center, flex-start);
+        border-bottom: 2px solid $lightgray;
+
+        i {
+            font-size: 2rem;
+            color: #424242;
+            margin: 20px 40px 100px;
+            padding: 30px;
+            background-color: $yellow;
+            cursor: pointer;
+            transition: $transition;
+
+            &:hover {
+                color: $yellow;
+                background: $black;
+            }
+        }
+    }
+}
+
+footer {
+    background-color: #424242;
+
+    p {
+        text-align: center;
+        color: $lightgray;
+        font-size: 1.4rem;
+        padding-bottom: 50px;
+    }
+}
+
+@media (max-width: 767px) {
+    header {
+        height: 100vh;
+
+        h1 {
+            font-size: 3rem;
+        }
+       
+       nav {
+            position: relative;
+            top: -50%;
+            background-color: $black;;
+            width: 100%;
+            height: 23vh;
+            transition: 0.5s ease-out;
+
+            &.show {
+                top: 0%;
+                transition: 0.5s ease-in;
+                height: 35vh;
+            }
+
+            ul {
+                @include flex(center, center, column);
+                background-color: $black;
+    
+                li {
+                    margin: 20px;
+    
+                    a {
+                        border-bottom: 2px solid $black;
+                        color: $yellow;
+    
+                        &:hover { 
+                            border-bottom: 2px solid $yellow;
+                        }
+                    }
+                }
+            }
+       }
+    
+       .hero {
+        width: 100%;
+        border: 30px solid #fae9ba;
+
+        img {
+            width: 100%;
+        }
+    }
+}
+    
+    .about {
+        background-color: #424242;
+    
+        .container {
+            @include flex(center, flex-start, column);
+            border: none;
+            padding-top: 20px;
+
+            div {
+                padding: 50px 0;
+                border-bottom: 2px solid $lightgray;
+            }
+
+            p {
+                width: 100%;
+                margin: 30px auto;
+            }
+        }
+    }
+    
+    .portfolio {
+        h3 {
+            padding: 40px 0 40px;
+        }
+    
+        p {
+            padding: 0 50px;
+            line-height: 2;
+        }
+    
+        .container {
+            @include flex(center, center, column);
+            border-bottom: 2px solid $lightgray;
+            padding-bottom: 60px;
+            padding-top: 0;
+    
+            div {
+                width: 100%;
+                margin-top: 60px;
+
+                h2 {
+                    padding: 30px 0;
+                    margin: 0;
+                }
+    
+                p {
+                    padding: 30px 0;
+                    width: 100%;
+                }
+            }
+        }
+    }
+    
+    .contact {
+        p {
+            line-height: 2;
+        }
+
+        input,
+        textarea {
+            width: 100%;
+        }
+    
+        .icons {
+            @include flex(center, flex-start, row, wrap);
+            i {
+                margin: 20px;
+            }
+        }
+    }
+}
+
+@media (min-width: 768px) and (max-width: 1600px) {
+    header {
+        nav {
+            ul {
+                li {
+                    margin: 30px
+                }
+            }
+        }
+    }
+    
+    .about {
+        background-color: #424242;
+    
+        .container {
+            @include flex(center, flex-start, column);
+    
+            p {
+                margin: 50px 0px;
+            }
+    
+            button {
+                margin-bottom: 60px;
+            }
+    
+        }
+    }
+    
+    .portfolio {
+        .container {
+            @include flex(center, flex-start, column);
+    
+            div {
+                width: 100%;
+    
+                button {
+                    margin-bottom: 60px;
+                }
+            }
+        }
+    }
+    
+    .contact {
+        .container { padding-bottom: 50px;}
+    
+        input,
+        textarea {
+            width: 100%;
+        }
+    }
+}
